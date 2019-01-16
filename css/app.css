@@ -129,3 +129,7 @@ kbd {
 .active {
     color: white !important;
 }
+
+code {
+    padding: 0
+}
