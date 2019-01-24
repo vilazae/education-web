@@ -133,3 +133,7 @@ kbd {
 code {
     padding: 0
 }
+
+.radio-inline input[type=radio] {
+        cursor: pointer;
+}

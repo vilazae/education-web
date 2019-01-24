@@ -1,167 +1,231 @@
-    <!-- Image Background Page Header -->
-    <!-- Note: The background image is set within the business-casual.css file. -->
-    <header class="business-header" style="height: 132px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12" style="margin-top: 30px;">
-                    <h1 class="tagline" style="font-size: 48px">Ejercicios</h1>
-                </div>
+<!-- Image Background Page Header -->
+<!-- Note: The background image is set within the business-casual.css file. -->
+<header class="business-header"
+        style="height: 132px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"
+                 style="margin-top: 30px;">
+                <h1 class="tagline"
+                    style="font-size: 48px">Ejercicios</h1>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-        <!-- Page Content -->
-    <div class="container">
+<!-- Page Content -->
+<div class="container">
 
-        <hr>
+    <hr>
 
-        <div class="row">
-            <div class="col-sm-8">
-                <p>Es hora de poner a prueba los conocimientos adquiridos. A continuación se presentan unos simpres ejercicios que te ayudarán a valorar el nivel de conocimiento adquirido.
+    <div class="row" ng-if="exCtrl.resolved === true">
+        <div class="col-sm-8">
+            <div class="alert alert-success" ng-if="!exCtrl.hasError">
+                <h2 class="alert-heading"><span class="glyphicon glyphicon-ok-circle" style="margin-right:18px"></span>Enhorabuena!</h2>
+                <p>Has completado con éxito todos los ejercicios. Eres un Bill Gates en potecia.</p>
+            </div>
+            <div class="alert alert-danger" ng-if="exCtrl.hasError">
+                <h2 class="alert-heading"><span class="glyphicon glyphicon-remove-circle" style="margin-right:18px"></span>Ouch!</h2>
+                <p>Has cometido algún fallo, revisa los ejercicios y vuelve a corregirlos.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <p>Es hora de poner a prueba los conocimientos adquiridos. A continuación se presentan unos simpres ejercicios que te ayudarán a valorar el nivel de conocimiento adquirido.
 
                 <br>
                 <h1><small class="text-muted">Ejercicio 1</small></h1>
                 <p>En el siguiente fragmento de código, ¿cuál será el valor de la variable <b>miSuma</b>?.</p>
-                <div class="alert alert-info" role="alert" >
-	                <h2 style="margin-left: 84px;">
-	                	<code style="background-color: inherit; color: #337ab7;">
-                        <span>var miVariable = 12 </span><br>
-	                	<span>var miOtraVariable = 6 </span><br>
-	                	<br>
-	                	<span>var miSuma = miVariable + miOtraVariable</span><br>
-	                	</code>
-	            	</h2>
-	                <br>
-	            </div>
+                <div class="alert alert-info"
+                     role="alert">
+                    <h2 style="margin-left: 84px;">
+                        <code style="background-color: inherit; color: #337ab7;">
+                            <span>var miVariable = 12 </span><br>
+                            <span>var miOtraVariable = 6 </span><br>
+                            <br>
+                            <span>var miSuma = miVariable + miOtraVariable</span><br>
+                        </code>
+                    </h2>
+                    <br>
+                </div>
 
                 <h5>Rspuestas:</h5>
                 <hr>
                 <form class="form-inline">
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">6
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex1"
+                               value="12"
+                               name="optradio">12
                     </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">18
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex1"
+                               value="18"
+                               name="optradio">18
                     </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">6
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex1"
+                               value="6"
+                               name="optradio">6
                     </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">miVariablemiOtraVariable
-                    </label>
-                </form>
-                <hr>
-
-
-                <div style="margin-top: 100px"></div>
-
-                <h1><small class="text-muted">Ejercicio 3</small></h1>
-                <p>En el siguiente fragmento de código, ¿cuál será el valor de la variable <b>miResultado</b>?.</p>
-
-                <div class="alert alert-info" role="alert" >
-	                <h2 style="margin-left: 84px;">
-	                	<code style="background-color: inherit; color: #337ab7;">
-	                	<span>var miCondicion = 3</span><br>
-	                	<span>var miResultado = 'Eduardo'</span><br>
-
-                        <br>
-	                	<span>if ( miCondicion > 7 ) {</span><br>
-	                	<span>&nbsp&nbsp miResultado = 'Fonseca'</span><br>
-	                	} else {<br>
-	                	<span>&nbsp&nbsp miResultado = 'Pedrero'</span><br>
-	                	}
-	                	</code>
-	            	</h2>
-
-	                <br>
-	            </div>
-                <h5>Rspuestas:</h5>
-                <hr>
-                <form class="form-inline">
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">Eduardo
-                    </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">Fonseca
-                    </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">Pedrero
-                    </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">3
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex1"
+                               value="miVariablemiOtraVariable"
+                               name="optradio">miVariablemiOtraVariable
                     </label>
                 </form>
                 <hr>
-
 
                 <div style="margin-top: 100px"></div>
 
                 <h1><small class="text-muted">Ejercicio 2</small></h1>
                 <p>En el siguiente fragmento de código, ¿cuál será el valor de la variable <b>miResultado</b>?.</p>
 
-                <div class="alert alert-info" role="alert" >
-	                <h2 style="margin-left: 84px;">
-	                	<code style="background-color: inherit; color: #337ab7;">
-	                	<span>var miCondicion = 3</span><br>
-	                	<span>var miResultado = 'Eduardo'</span><br>
+                <div class="alert alert-info"
+                     role="alert">
+                    <h2 style="margin-left: 84px;">
+                        <code style="background-color: inherit; color: #337ab7;">
+                            <span>var miCondicion = 3</span><br>
+                            <span>var miResultado = 'Eduardo'</span><br>
 
-                        <br>
-	                	<span>if ( miCondicion > 7 ) {</span><br>
-	                	<span>&nbsp&nbsp miResultado = 'Fonseca'</span><br>
-	                	} else {<br>
-	                	<span>&nbsp&nbsp miResultado = 'Pedrero'</span><br>
-	                	}
-	                	</code>
-	            	</h2>
+                            <br>
+                            <span>if ( miCondicion < 7 ) {</span><br>
+                            <span>&nbsp&nbsp miResultado = 'Fonseca'</span><br>
+                            } else {<br>
+                            <span>&nbsp&nbsp miResultado = 'Pedrero'</span><br>
+                            }
+                        </code>
+                    </h2>
 
-	                <br>
-	            </div>
+                    <br>
+                </div>
                 <h5>Rspuestas:</h5>
                 <hr>
                 <form class="form-inline">
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">Eduardo
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex2"
+                               value="Eduardo"
+                               name="optradio">Eduardo
                     </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">Fonseca
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex2"
+                               value="Fonseca"
+                               name="optradio">Fonseca
                     </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">Pedrero
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex2"
+                               value="Pedrero"
+                               name="optradio">Pedrero
                     </label>
-                    <label class="form-check form-check-label radio-inline" style="font-weight: 700; margin-left: 48px;">
-                        <input type="radio" name="optradio">3
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex2"
+                               value="3"
+                               name="optradio">3
                     </label>
                 </form>
                 <hr>
 
+                <div style="margin-top: 100px"></div>
 
+                <h1><small class="text-muted">Ejercicio 3</small></h1>
+                <p>¿Qué valor deberá tener la variable <b>miCondicion</b> para que en la variable <b>miResultado</b> obtengamos un <b>100</b>?.</p>
+
+                <div class="alert alert-info"
+                     role="alert">
+                    <h2 style="margin-left: 84px;">
+                        <code style="background-color: inherit; color: #337ab7;">
+                            <span>var miCondicion = <span style="padding-right: 136px; background-color: #436484;border-radius: 50px;"></span></span><br>
+                            <span>var miResultado = 0</span><br>
+
+                            <br>
+                            <span>if ( miCondicion > 16 ) {</span><br>
+                            <span>&nbsp&nbsp miResultado = 0</span><br>
+                            } else {<br>
+                            <span>&nbsp&nbsp miResultado = 100</span><br>
+                            }
+                        </code>
+                    </h2>
+
+                    <br>
+                </div>
+                <h5>Rspuestas:</h5>
+                <hr>
+                <form class="form-inline">
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex3"
+                               value="100"
+                               name="optradio">100
+                    </label>
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex3"
+                               value="miCondicion"
+                               name="optradio">miCondicion
+                    </label>
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex3"
+                               value="12"
+                               name="optradio">12
+                    </label>
+                    <label class="form-check form-check-label radio-inline"
+                           style="font-weight: 700; margin-left: 48px;">
+                        <input type="radio"
+                               ng-model="exCtrl.ex3"
+                               value="miResultado"
+                               name="optradio">miResultado
+                    </label>
+                </form>
+                <hr>
 
                 <p class="text-center">
-                    <a class="btn btn-default btn-lg" style="background-color: #333;color: white;" ng-click="">CORREGIR TEST <span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-default btn-lg"
+                       style="background-color: #333;color: white;"
+                       ng-click="exCtrl.evaluateTest()">CORREGIR TEST <span class="glyphicon glyphicon-pencil"></span></a>
                 </p>
-            </div>
-            <div class="col-sm-4">
-				<img src="css/img/ex.jpg" width="376px">
-                <address>
+        </div>
+        <div class="col-sm-4">
+            <img src="css/img/ex.jpg"
+                 width="376px">
+            <address>
 
-                    <br><em>Disfruta de la programación poniendo a prueba tus conocimientos.</em>
-                </address>
+                <br><em>Disfruta de la programación poniendo a prueba tus conocimientos.</em>
+            </address>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2019 - Víctor Miguel Lázaro Ezquerro</p>
+
             </div>
         </div>
         <!-- /.row -->
+    </footer>
 
-
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2019</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
+</div>
